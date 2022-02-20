@@ -1,5 +1,4 @@
-# Django-Tutorials
-Why Django Framework ?
+**Why do we prefer Django Framework ?**
 Excellent documentation and high scalability.
 Used by Top MNCs and Companies, such as Instagram, Disqus, Spotify, Youtube, Bitbucket, Dropbox, etc. and the list is never-ending.
 Easiest Framework to learn, rapid development and Batteries fully included.

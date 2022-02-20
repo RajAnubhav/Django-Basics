@@ -18,24 +18,24 @@ functions call
 def index(request):
     return render(request, "index.html")
 
-def removePunc(request):
+def analyze(request):
     # to get the text
     djtext = request.GET.get('text', 'default')
     print(djtext)
     # to analyze the text
     return HttpResponse("remove punc")
 
-def capsFirst(request):
-    return HttpResponse("Capitalizing the text")
+# def capsFirst(request):
+#     return HttpResponse("Capitalizing the text")
 
-def newLineRemove(request):
-    return HttpResponse("This is the New Line Remove")
+# def newLineRemove(request):
+#     return HttpResponse("This is the New Line Remove")
 
-def spaceRemover(request):
-    return HttpResponse("This is space Remover")
+# def spaceRemover(request):
+#     return HttpResponse("This is space Remover")
 
-def charcount(request):
-    return HttpResponse("This is space count")
+# def charcount(request):
+#     return HttpResponse("This is space count")
 
 
 # this is the simple exercise in django

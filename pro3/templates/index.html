@@ -17,16 +17,17 @@
 <body>
     <!-- This is for the body of the webpage -->
     <div>
-        <nav>
-            <div class="navibar">
-                <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">MORE</a></li>
-                    <li><a href="#">CONTACT</a></li>
-                </ul>
-            </div>
-        </nav>
+    <h1>Home</h1>
+    </div>
+
+    <div>
+        This is the Punctuation Remover
+        <form action="/analyze" method="get">
+            <!-- This is for the text area -->
+            <textarea name="" id="" cols="30" rows="10" placeholder="Enter the text here"></textarea>
+            <input type="checkbox" name="analyze">Remove Punctuation<br>
+            <button type="submit">Analyze Text</button>
+        </form>
     </div>
 </body>
 </html>

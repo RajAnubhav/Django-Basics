@@ -20,9 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     #'''(this will look in the google, this is for the functions in views.py file, name= )'''
-    path('remove punc/', views.removePunc, name='remove'),
-    path('capitalizeFirst', views.capsFirst, name='capsFirst'), 
-    path('newLineRemove', views.newLineRemove, name='newLineRemove'), 
-    path('spaceRemover', views.spaceRemover, name="spaceRemover"),
-    path('charcount', views.charcount, name="charcount"),
+    # path('remove punc/', views.removepunc, name='remove'),
+    path('analyze', views.analyze, name='analyze_text'), 
+    
 ]

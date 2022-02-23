@@ -1,25 +1,25 @@
-from django.http import HttpRequest, HttpResponse
+from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    return render(request, "index.html")
+    return render(request, "index.huml")
 
 def analyze(request):
-    text = render('text', 'default')
+    djtext= request.GET.get('removepunc', 'off')
 
-    # check the checkbox
-    removepunc= render.GET.get('removepunc', 'off')
-    
-    # to check if checkbox is ON
-    if removepunc=="on":
-        punc = '''!"#$%&'()*+, -./:;<=>?@[\]^_`{|}~'''
-        analyzed =""
-        for char in text:
-            if char not in punc:
-                analyzed = analyzed + char
+    #check checkbox values
+    analyze = request.GET.get('removepunc', 'off')
 
-        params = {'purpose':'Removed Punctuations','analyzed_text':analyzed}
-        return render(request, 'index.html', params)
-    
+    # check if checkox is on or off
+    if analyze == 'on':
+        punctuations = '''!()-[{]};:'"\,<>./?@#$%^&*_~'''
+        analyzed = ""
+        for char in djtext:
+            if char not in punctuations:
+                analyzed= analyzed+char
+        
+        params = {'purpose':'Removed Punctions', 'analyzed_text':analyzed}
+        return render(request, 'analyze.html', params)
+
     else:
-        return HttpResponse("Error")
+        return HttpResponse('Error')

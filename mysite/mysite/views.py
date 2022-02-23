@@ -22,28 +22,21 @@ def analyze(request):
     # to get the text
     djtext = request.GET.get('text', 'default')
     print(djtext)
-    # to analyze the text
-    return HttpResponse("remove punc")
+    
+    # to check whether checkbox is on or not
+    removepunc= request.GET.get('removepunc','off')
 
-# def capsFirst(request):
-#     return HttpResponse("Capitalizing the text")
+    if removepunc=="on":
+        punc= '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        analyzed = ""
+        for char in djtext:
+            if char not in punc:
+                analyzed = analyzed + char
 
-# def newLineRemove(request):
-#     return HttpResponse("This is the New Line Remove")
+        params={'purpose':'Removed Punctuations', 'analyzedText':analyzed}
+        return render(request, 'analyze.html', params)
+    
+    else:
+        return HttpResponse('error')
+        
 
-# def spaceRemover(request):
-#     return HttpResponse("This is space Remover")
-
-# def charcount(request):
-#     return HttpResponse("This is space count")
-
-
-# this is the simple exercise in django
-'''
-Name of the exercise: Personal navigator websites
-Take 5 websites urls and make a website and get access of the other 5 websites
-hint !  html command: <href="https://www.google.com"></a>
-'''
-
-
-# laying the pipline in django
